@@ -49,6 +49,13 @@
                 {{ recipe.description|linebreaksbr }}
             </p>
 
+            {% if recipe.ingredients %}
+                <h4 class="recipe-field-header">Ингредиенты</h4>
+                <p class="recipe-description">
+                    {{ recipe.ingredients|linebreaksbr  }}
+                </p>
+            {% endif %}
+
             {% if recipe.cooking_steps %}
                 <h4 class="recipe-field-header">Шаги приготовления</h4>
                 <p class="recipe-description">

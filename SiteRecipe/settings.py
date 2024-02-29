@@ -143,5 +143,4 @@ AUTHENTICATION_BACKENDS = [
     'users.authentication.EmailAuthBackend',
 ]
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+CSRF_TRUSTED_ORIGINS=["https://markovda.pythonanywhere.com"]

@@ -5,6 +5,7 @@ from django.db import models
 class Recipe(models.Model):
     title = models.CharField(max_length=200, verbose_name='Заголовок')
     description = models.TextField(blank=True, verbose_name='Описание')
+    ingredients = models.TextField(blank=True, verbose_name='Ингредиенты')
     cooking_steps = models.TextField(blank=True, verbose_name='Шаги приготовления')
     cooking_time = models.IntegerField(blank=True, default=0, verbose_name='Время приготовления (минут)')
     image = models.ImageField(
