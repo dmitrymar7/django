@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load recipe_tags %}
+
+{% block css %}
+<link type="text/css" rel="stylesheet" href="{% static 'Recipe/css/main.css' %}"/>
+<link type="text/css" rel="stylesheet" href="{% static 'Recipe/css/menu.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+<div class="content-main">
+    <div class="content-main-left">
+
+        <h2 class="categories-header">Категории</h2>
+
+        <ul class="list-categories">
+
+            {% if category_id %}
+            <li class="category-item">
+            {% else %}
+            <li class="category-item category-selected">
+            {% endif %}
+                <a class="category-item-link" href="{% url  url_category 0 %}">Все</a>
+            </li>
+
+            {% for category in categories %}
+            {% if category_id == category.id %}
+            <li class="category-item category-selected">
+            {% else %}
+            <li class="category-item">
+            {% endif %}
+                <a class="category-item-link" href="{% url url_category category.id %}">{{ category.name }}</a>
+            </li>
+            {% endfor %}
+
+        </ul>
+
+    </div>
+    <div class="content-main-right">
+
+        {% show_menu service_menu_name %}
+
+        <section class="recipe-items">
+            {% for recipe in recipes %}
+            <div class="recipe-item">
+
+                <h3 class="recipe-item-title">{{ recipe.title }}</h3>
+                {% if recipe.image %}
+                     <img src="{{ recipe.image.url }}" class="recipe-item-image">
+                {% endif %}
+
+                {% if recipe.cooking_time %}
+                <p class="recipe-item-cooking_time"> <strong> Время приготовления: </strong> {{ recipe.cooking_time }} минут</p>
+                {% endif %}
+                <h3>Описание</h3>
+                <p class="recipe-item-description">{{ recipe.description|linebreaksbr|truncatewords:40 }}</p>
+
+                <button class="recipe-item-link" type="submit" onClick="location.href='{% url 'recipe' recipe.id %}'">Подробнее</button>
+
+            </div>
+            {% endfor %}
+        </section>
+
+    </div>
+
+</div>
+
+{% endblock content %}

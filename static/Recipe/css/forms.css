@@ -1,0 +1,25 @@
+
+.content-container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.form-container{
+    margin-right: auto;
+    margin-left: auto;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.form-label {
+    display: block;
+    vertical-align: top;
+}
+
+.item-center-text{
+    text-align: center;
+}

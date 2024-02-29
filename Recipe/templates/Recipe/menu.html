@@ -1,0 +1,13 @@
+<div class="menu">
+
+    {% if menu %}
+        {% for item in menu %}
+            {% if service_menu_name == item.service_name %}
+                <a class="menu-item menu-item-selected" href="{{ item.url }}">{{ item.name }}</a>
+            {% else %}
+                <a class="menu-item" href="{{ item.url }}">{{ item.name }}</a>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+</div>

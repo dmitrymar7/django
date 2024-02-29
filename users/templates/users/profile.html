@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load recipe_tags %}
+
+{% block css %}
+<link type="text/css" rel="stylesheet" href="{% static 'Recipe/css/forms.css' %}"/>
+<link type="text/css" rel="stylesheet" href="{% static 'Recipe/css/menu.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+{% show_menu service_menu_name %}
+
+<div class="content-container">
+
+    <h1 class="item-center-text">Профиль</h1>
+
+    <form method="post">
+
+        {% csrf_token %}
+
+        <div class="form-container">
+            <div class="form-error">{{ form.non_field_errors }}</div>
+            {% for f in form %}
+            <p ><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
+            <div class="form-error">{{ f.errors }}</div>
+            {% endfor %}
+
+            <p ><button type="submit">Сохранить</button></p>
+        </div>
+
+    </form>
+
+    <p class="item-center-text">
+        <a href="{% url 'users:password_change' %}">Сменить пароль</a>
+    </p>
+
+</div>
+
+{% endblock %}
+

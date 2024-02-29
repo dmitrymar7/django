@@ -1,0 +1,52 @@
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Книга рецептов</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'Recipe/css/base.css' %}"/>
+    {% block css %}
+    {% endblock %}
+</head>
+<body>
+    <div class="wrapper">
+
+        <div class="header">
+
+            <h1 class="header-h1">Книга рецептов</h1>
+
+            {% if user.is_authenticated %}
+                    <p class="last">
+                        <a class="last-link" href="{% url 'users:profile' %}">{{user.username}}</a> |
+                        <a class="last-link" href="{% url 'users:logout' %}">Выйти</a>
+                    </p>
+            {% else %}
+                <p class="last">
+                    <a class="last-link" href="{% url 'users:login' %}">Войти</a> |
+                    <a class="last-link" href="{% url 'users:register' %}">Регистрация</a>
+                </p>
+            {% endif %}
+
+        </div>
+
+        <div class="content">
+            
+			{% block content %}
+
+            {% endblock %}
+			
+        </div>
+      
+        <div class="footer">
+
+        </div>
+
+      </div>
+
+      </body>
+</body>
+</html>

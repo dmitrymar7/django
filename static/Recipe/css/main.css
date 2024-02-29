@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.content-main{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.content-main-left{
+    background-color: black;
+    width: 250px;
+}
+
+.categories-header{
+    text-align: center;
+    color: white;
+    font-size: 28px;
+}
+
+.list-categories{
+    text-align: center;
+    margin-top: 30px;
+    color: white;
+    font-size: 25px;
+}
+
+.category-item{
+    margin-bottom: 20px;
+}
+
+.category-selected{
+    background-color: grey;
+}
+
+.category-item-link{
+    text-decoration: None;
+    color: white;
+}
+
+.content-main-right{
+     margin-left: auto;
+     margin-right: auto;
+}
+
+.recipe-items{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 70px;
+}
+
+.recipe-item{
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 1px black;
+    box-shadow: 5px 5px grey, -.4em 0 2em grey;
+    padding: 5px;
+    position: relative;
+}
+
+.recipe-item-image{
+    max-height: 150px;
+    max-width: 100%;
+}
+
+.recipe-item-title{
+    text-align: center;
+}
+
+.recipe-item-description{
+    text-align: start;
+    width: 100%;
+}
+
+.recipe-item-cooking_time{
+    text-align: start;
+}
+
+.recipe-item-link{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 100px;
+    height: 30px;
+    background-color: #DCDCDC;
+    border-radius: 15px;
+    color: black;

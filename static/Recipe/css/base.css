@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.header {
+    height: 50px;
+    flex: 0 0 auto;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-h1{
+    text-align: center;
+    color: white;
+    font-size: 42px;
+}
+
+.last{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    right:10px;
+    text-decoration: none;
+}
+
+.last-link{
+    color: white;
+    text-decoration: none;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.footer {
+    min-height:70px;
+    flex: 0 0 auto;
+    background-color: black;
+}
+
+.footer-content{
+    color: white;
+}
